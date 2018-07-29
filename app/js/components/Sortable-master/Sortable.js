@@ -483,9 +483,12 @@
 		},
 
 		_disableDelayedDrag: function () {
+			const userAgent = navigator.userAgent || navigator.vendor;
 			var ownerDocument = this.el.ownerDocument;
+			if (!/android/i.test(userAgent)) {
+				clearTimeout(this._dragStartTimer);
 
-			clearTimeout(this._dragStartTimer);
+			}
 			_off(ownerDocument, 'mouseup', this._disableDelayedDrag);
 			_off(ownerDocument, 'touchend', this._disableDelayedDrag);
 			_off(ownerDocument, 'touchcancel', this._disableDelayedDrag);
@@ -512,7 +515,8 @@
 			}
 			else {
 				_on(dragEl, 'dragend', this);
-				_on(rootEl, 'dragstart', this._onDragStart);
+				// _on(rootEl, 'dragstart', this._onDragStart);
+				this._onDragStart(evt);
 			}
 
 			try {

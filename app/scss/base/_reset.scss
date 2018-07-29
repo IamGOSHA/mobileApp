@@ -79,7 +79,6 @@ form {
 }
 
 a {
-	color: $link-color;
 	@include transition($default-transition);
 	text-decoration: none;
 	outline: none;

@@ -36,9 +36,13 @@ $(function(){
 		$('.main-nav-list').slideToggle(); 
 		return false;
 	});
-	
+	$('.brand-title').each(function() {
+		if ($(this).text().length > 30) {
+			$(this).text( $(this).text().substring(0, 30)+ "...");
+		}
+	});
 	/* components */
-	
+
 
 	/*
 	if($('.styled').length) {
@@ -50,19 +54,59 @@ $(function(){
 			padding  : 10
 		});
 	};*/
-	if($('.slick-slider').length) {
 
-		$('.slick-slider').slick({
-			dots: false,
-            arrows: false,
-			infinite: false,
-			speed: 300,
-			slidesToShow: 1,
-            centerMode: true,
-            variableWidth: true,
-			slidesToScroll: 1
-		});
-	};
+	function initSlider(){
+		var initSlide =$('.slick-slider');
+					initSlide.on('init', function(event, slick) {
+					var $swipeTabs = $('.swipe-tab');
+					var $swipeTabsContentContainer = $('.swipe-tabs-container');
+					var currentIndex = 0;
+					var activeTabClassName = 'active-tab';
+				
+					var elem= document.getElementsByClassName('elem');
+					for(var i=0; i < elem.length; ++i){
+						if(currentIndex == elem[i].dataset.target ){
+							console.log();
+									elem[i].classList.remove("hide");
+						}else{
+							elem[i].classList.add("hide");
+						}
+					}
+					$swipeTabsContentContainer.removeClass('hide');
+					currentIndex = slick.getCurrent();
+					$swipeTabs.removeClass(activeTabClassName);
+							 $('.swipe-tab[data-slick-index=' + currentIndex + ']').addClass(activeTabClassName);
+				});
+		var initSlide =$('.slick-slider')
+		initSlide.slick({
+					dots: false,
+					arrows: false,
+					infinite: false,
+					speed: 300,
+					slidesToShow: 1,
+					centerMode: true,
+					variableWidth: true,
+					slidesToScroll: 1,
+			});
+			initSlide.on('afterChange', function(event, slick, currentSlide) {
+				var elem= document.getElementsByClassName('elem');
+				for(var e=0; e < elem.length; ++e){
+					if(currentSlide == elem[e].dataset.target ){
+								elem[e].classList.remove("hide");
+					}else{
+						elem[e].classList.add("hide");
+					}
+				}
+				// $swipeTabsContentContainer.removeClass('hide');
+				// currentIndex = slick.getCurrent();
+				// $swipeTabs.removeClass(activeTabClassName);
+				// 		 $('.swipe-tab[data-slick-index=' + currentIndex + ']').addClass(activeTabClassName);
+			});
+	}
+
+initSlider();
+
+
 	/*
 	if($('.scroll').length) {
 		$(".scroll").mCustomScrollbar({
