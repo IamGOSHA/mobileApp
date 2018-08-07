@@ -1,3 +1,32 @@
-<svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0.250041 10.455L10.305 0.4C10.865 -0.133333 11.745 -0.133333 12.305 0.4L22.36 10.455C22.6038 10.6967 22.6771 11.062 22.5455 11.3791C22.4138 11.6961 22.1034 11.902 21.76 11.9H16.305V18.125C16.305 19.1053 15.5103 19.9 14.53 19.9H8.08004C7.09974 19.9 6.30504 19.1053 6.30504 18.125V11.9H0.85004C0.506715 11.902 0.196287 11.6961 0.0646266 11.3791C-0.0670342 11.062 0.00624894 10.6967 0.250041 10.455Z" transform="translate(0.695068 0.0999756)" fill="black"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg2400"
+   version="1.1"
+   fill="none"
+   viewBox="0 0 24 20"
+   height="20"
+   width="24">
+  <metadata
+     id="metadata2406">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2404" />
+  <path
+     id="path2398"
+     d="m 11.999756,-0.39807128 c -0.485057,0 -0.969036,0.17828519 -1.343751,0.53515626 l -0.0059,0.005859 L 0.5935055,10.199585 c -0.38709218,0.383771 -0.50392758,0.967321 -0.29492188,1.470703 0.2090275,0.503278 0.70502178,0.833253 1.24999998,0.830079 h 4.9511719 v 5.724609 c 0,1.250523 1.0248672,2.275391 2.2753906,2.275391 h 6.4492189 c 1.250523,0 2.275391,-1.024868 2.275391,-2.275391 v -5.724609 h 4.955078 c 0.544311,0.0025 1.039212,-0.327416 1.248046,-0.830079 0.20864,-0.502733 0.09099,-1.084969 -0.294921,-1.46875 v -0.002 L 13.349365,0.14294435 l -0.0039,-0.005859 c -0.374715,-0.35687107 -0.860647,-0.53515626 -1.345703,-0.53515626 z m 0,0.99609376 c 0.233497,0 0.467593,0.0874222 0.652343,0.26171874 L 22.70288,10.90857 v 0.002 c 0.100505,0.09964 0.130466,0.246129 0.07617,0.376953 -0.05434,0.130792 -0.178521,0.213716 -0.320312,0.212891 h -0.002 -5.957031 v 6.724609 c 0,0.710077 -0.565315,1.275391 -1.275391,1.275391 H 8.7751461 c -0.7100766,0 -1.2753906,-0.565314 -1.2753906,-1.275391 V 11.500367 H 1.5427242 c -0.1416717,8.25e-4 -0.2660191,-0.08217 -0.3203125,-0.212891 -0.054316,-0.130818 -0.026273,-0.277324 0.074219,-0.376953 l 0.00195,-0.002 L 11.345459,0.86169435 c 0.185285,-0.17646193 0.419353,-0.26367187 0.654297,-0.26367187 z"
+     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:evenodd;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
 </svg>

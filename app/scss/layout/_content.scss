@@ -46,15 +46,17 @@
 }
 .icon-ic_move:before {
   content: "\e900";
+	font-size: 32px;
   color: $accent-color;
 }
 /*END custom-icons-style*/
 
 //main styles
 body{
-	font-family: "RobotoRegular", sans-serif;
+	font-family: "RobotoLight", sans-serif;
 	color: $main-color;
 	background: $base-bg;
+	font-size: 100%;
 }
 .green-color{
 	background-color: $on-color;
@@ -65,9 +67,9 @@ body{
 .main-wrapper{
 	padding: 0 0 0 0;
 	min-width: $min-width;
-  width: 100%;
+	width: 100%;
+	max-width: 900px;
 	margin: 0 auto;
-	max-width: 375px;
 	position: relative;
 	overflow: hidden;
 	min-height: 100%;
@@ -75,6 +77,7 @@ body{
 	flex-direction: column;
 	justify-content: flex-start;
 	background-color: $bg-color;
+
 }
 .wrapper{
 	min-width: $min-width;
@@ -82,25 +85,16 @@ body{
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
+
+
+
 }
 
 /* titles */
-p{	
-	@include font($base-font-size,$base-line-height,$main-color);
-	padding: 15px 0 15px 0;
-	font-weight: 400;	
-}
+
 h1{
 	font-size: 16px;
 	padding:  0;
-}
-h2{
-	padding: 15px 0 15px 0;
-	font-weight: 400;	
-}
-h3{
-	padding: 15px 0 15px 0;
-	font-weight: 400;
 }
 
 /* text position */
@@ -123,7 +117,10 @@ h3{
 */
 
 
-
+nav{
+	height: 50px;
+	border-bottom: 1px solid $accent-color;
+}
 
 .panel-top-app{
 	height: 20px;
@@ -135,6 +132,7 @@ header{
 	min-width: $min-width;
 	text-align: left;
 	order: 1;
+	z-index: 10;
 }
 .top-panel{
 	display: flex;
@@ -146,7 +144,7 @@ header{
 	background: $top-panel-color;
 	&:after{
 		content: "";
-		height: .5px;
+		height: 1px;
 		width: 100%;
 		display: block;
 		position: absolute;
@@ -176,160 +174,236 @@ header{
 	margin-left: 15px;
 	font-weight: 200;
 	color: $main-color;
+	font-family: "RobotoLight", sans-serif;
 
 }
+
 /*SLIDE tab*/
 .slide-tab-panel{
-	position: relative;
+	position: absolute;
 	height: 40px;
+	displaY: flex;
 	width: 100%;
-	display: block;
-	border-bottom: 1px solid $accent-color;
-	&:after{
+	font-family: "RobotoLight", sans-serif;
+	#romb{
 		content: '';
 		display: block;
 		position: absolute;
-		top: 100%;
+		top: calc(100% + .5px) ;
 		left: 50%;
 		height: 10px;
 		width: 10px;
 		background-color: $accent-color;
 		transform: translate(-50%,-50%) rotate(45deg);
-
+		z-index: 10000000;
 	}
 }
-
-
-/*End SLIDE tab*/
- .elem{
-	opacity: 1;
+.sliding-line {
+	height: 10px;
+	width: 10px; 
+	background: transparent;
+	position: absolute; 
+	bottom: -15px; /* Смещаем ее вниз на 2 пикселя. Здесь, как правило, задается значение эквивалентное высоте полоски, но только со знаком минус */
+	left: 0;
+	&:after{
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 0;
+		height: 10px;
+		width: 10px;
+		background-color: $accent-color;
+		transform: translateX(-50%)  rotate(45deg);
+		display: block;
+	}
 }
-.content{	
+/*End SLIDE tab*/
+.content{
 	min-width: $min-width;
-	text-align:left;
-  width: 100%;
+	box-sizing: content-box;
+	text-align: left;
+	overflow: hidden;
+  	width: 100%;
 	order: 2;
 	flex-grow: 1;
-}
-.slick-slider{
-	div{
-		text-align: center;
-		display: block;
-		padding-top: 7px;
-		text-transform: uppercase;
-		align-items: flex-end;
-		color: $accent-color;
-		opacity: 1;
-	}
-	.slick-slide{
-		width: 135px;
-	}
 
 }
+.swipe-tab{
+	text-align: center;
+	display: block;
+	height: 100%;
+	width: 100px;
+	line-height: 40px;
+	text-transform: uppercase;
+	align-items: flex-end;
+	color: $accent-color;
+	opacity: 1;
+	font-family: "RobotoLight", sans-serif;
+}
 .block-content-panel{
-	max-height: 64px;
+	user-select: none;
 	position: relative;
 	width: 100%;
 	display: flex;
 	align-items: center;
-	flex-wrap: no-wrap;
-	flex-direction: row;
+	flex-direction: column;
+	background-color: $bg-color;
 	justify-content: space-between;
-	padding: 12px 0 11px 0;
-	border-bottom: .5px solid $second-color;
-}
-.block-content-panel.sortable-chosen{
-	&:before{
-		content: "";
-		color: #ffd596;
-		position: absolute;
-		right: 0;
-		top: 0;
-		height: calc( 100% - 1px);
-		width: 30%;
-		display: flex;
-		background: $bg-color;
-		z-index: 10;
+	padding: 11px 0 11px 0;
+	overflow: hidden;
+	border-bottom: 1px solid $second-color;
+	.value-percent{
+		margin-right: 0;
+		font-family: "RobotoLight", sans-serif;
+		transition: all 1s ease;
 	}
-	&:after{
-		content: "\e900";
-		color: #ffd596;
-		position: absolute;
-		font-family: "icomoon";
-		font-size: 45px;
-		right: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		display: flex;
-		background: $bg-color;
-		text-align: center;
-		z-index: 20;
+	.data-num{
+		margin-right: 0;
+		font-family: "RobotoLight", sans-serif;
+		transition: all 1s ease;
 	}
+  .btn-target {
+    margin-right: -500px;
+    visibility: visible;
+    transition: margin 1.2s ease;
+  }
 }
 
+
+.longpress.block-content-panel{
+	border-bottom: 1px solid $second-color;
+	.value-percent{
+		margin-right: -500px;
+		transition: margin 1s ease;
+	}
+	.data-num{
+		margin-right: -500px;
+		transition: margin 1s ease;
+	}
+	.btn-target{
+		margin-right: 0;
+		visibility: visible;
+	}
+}
+.longpress.block-content-panel.ui-sortable-helper{
+	border-bottom: 1px solid transparent;
+	opacity: .9!important;
+	.value-percent{
+		margin-right: -500px;
+		transition: margin 1s ease;
+	}
+	.data-num{
+		margin-right: -500px;
+		transition: margin 1s ease;
+	}
+	.btn-target {
+		margin-right: 0;
+		visibility: visible;
+      transition: margin 1.2s ease;
+	}
+}
+.block-content-panel.ui-sortable-handle.stop{
+  .value-percent{
+    margin-right: -500px;
+    transition: margin 1s ease;
+  }
+  .data-num{
+    margin-right: -500px;
+    transition: margin 1s ease;
+  }
+  .btn-target{
+    margin-right: 0;
+    visibility: visible;
+  }
+}
+.btn-target{
+	position: absolute;
+	right: 0;
+    margin-right: -500px;
+	visibility: hidden;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: margin 1.2s ease;
+
+}
 .brand-title{
 	color: 	$second-color;
+	font-family: "RobotoLight", sans-serif;
 	font-size: 12px;
+	line-height: 16px;
+	display: block;
+	overflow: hidden;
+	min-width: 70%;
+	max-width: 70%;
 	white-space: nowrap;
 }
 .data-num{
 	color: $main-color;
 	font-size: 12px;
+	display: flex;
+	font-family: "RobotoLight", sans-serif;
+	justify-content: flex-end;
+	flex: 1;
 }
-
-.left-side-panel{
-	width: 34%;
+#swipe-tabs-cont{
+	touch-action: auto;
+}
+.value-num{
+	text-align: right;
 	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-}
-.right-side-panel{
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-}
-.center-side-panel{
-	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	.value-num{
+	.count-num{
+		font-family: "RobotoLight", sans-serif;
+		color: $main-color;
 		font-size: 24px;
-		text-align: right;
-		overflow: hidden;
-		.count-num{
-			color: $main-color;
-		}
-		span{
-			color: $accent-color;
-		}
+		line-height: 24px;
+	}
+	span{
+		font-family: "RobotoLight", sans-serif;
+		color: $accent-color;
+		line-height: 24px;
+		font-size: 24px;
 	}
 }
-.top-right-panel{
+.top-content-panel{
+	width: 100%;
 	display: flex;
-	justify-content: flex-end;
+	align-items: flex-start;
+	justify-content: space-between;
 }
-.bottom-left-panel{
+.wrapp-elem{
+	padding-top: 1px;
+  display: flex;
+  flex-direction: row;
+	align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+.bottom-content-panel{
+	padding-top: 1px;
+	width: 100%;
+	height: 24px;
 	margin-top: 7px;
 	display: flex;
-	flex-wrap: no-wrap;
-	align-items: flex-end;
-	justify-content: flex-start;
+	align-items: center;
+	justify-content: space-between;
 	.abbreviation{
 		display: flex;
+		overflow: hidden;
 		.abbr-title{
 			font-size: 24px;
-			line-height: 20px;
-			display: inline-block;
+			line-height: 24px;
+			font-family: "RobotoLight", sans-serif;
 			text-transform: uppercase;
 		}
 		.sup-title{
 			position: relative;
 			color: $accent-color;
 			margin-left: 5px;
+			display: flex;
 			font-size: 12px;
-			line-height: 12px;
+			line-height: 16px;
 			text-transform: uppercase;
+			font-family: "RobotoLight", sans-serif;
 			&:after{
 			content: "";
 			display: block;
@@ -338,6 +412,7 @@ header{
 			left: 0;
 			width: 100%;
 			height: 1px;
+				font-family: "RobotoLight", sans-serif;
 			background-color: $on-color;
 		}
 		}
@@ -356,19 +431,18 @@ header{
 		}
 
 	}
-}
-.bottom-right-panel{
-	margin-top: 7px;
-	display: flex;
-	flex-wrap: no-wrap;
-	align-items: flex-end;
-	justify-content: flex-end;
 	.value-percent{
-		font-size: 14px;
 		text-align: center;
 		background: $off-color;
-		padding: 5px 23px;
+		height: 24px;
+		width: 90px;
 		border-radius: 2px;
+		span{
+			font-size: 14px;
+			line-height: 23px;
+			height: 23px;
+			font-family: "RobotoLight", sans-serif;
+		}
 	}
 	.value-percent.on{
 		background-color: $on-color;
@@ -376,31 +450,22 @@ header{
 	.value-percent.off{
 		background-color: $off-color;
 	}
-
-	.value-percent{
-		font-size: 14px;
-		text-align: center;
-		background: $off-color;
-		padding: 5px 23px;
-		border-radius: 2px;
-	}
 	.btn-sand{
 		align-self: flex-start;
 		font-size: 20px;
 		margin-bottom: 10px;
 	}
-
 }
 
+
+
+
 footer{
-	height:80px;
+	height: 80px;
 	text-align:left;
 	width:100%;
 	min-width: $min-width;
 	order: 3;
-}
-.ghost{
-	opacity: 0;
 }
 .hide{
 	display: none;
@@ -408,53 +473,103 @@ footer{
 	transition: all 1s;
 }
 .elem{
+	position: relative;
 	opacity: 1;
-	transition: all 1s;
 	width: 100%;
 	height: 100%;
 	z-index: 10000;
 }
 .no{
 	position: relative;
-	display: block;
+	display: flex;
+	align-items: center;
 	width: 100%;
-	min-height: 100%;
-	&:after{
-		content: "";
-		position: fixed;
+	height: calc(100vh - 104px);
+	.circle-overlay{
+		position: absolute;
 		top: 50%;
 		left: 50%;
 		width: 152px;
 		height: 152px;
-		display: block;
+		display: flex;
 		border-radius: 50%;
 		background: rgba(51, 46, 50, 0.8);
-		z-index: 10px;
+		z-index: 10;
 		transform: translate(-50%,-50%);
 	}
-	&:after{
-		content: "\e904";
-		color:  $accent-color;
-		font-family: "icomoon";
-		font-size: 58px;
-		text-align: center;
-		position: fixed;
+	.icon-Component{
+		font-size: 71px;
 		line-height: 152px;
-		top: 50%;
-		left: 50%;
-		display: block;
-		transform: translate(-50%,-50%);
-		z-index: 40px;
+		display: flex;
+		margin: auto;
+		justify-content: center;
+		text-align: center;
+	}
+
+}
+.sortable-placeholder{
+	height: 70px;
+	background-color: $bg-color;
+	border-bottom: 1px solid $second-color;
+}
+@media screen and (max-width: 350px) {
+  .slick-slider{
+    .slick-slide{
+      width: 130px;
+    }
+  }
+	.wrapp-elem{
+		padding-top: 2px;
+	}
+	.brand-title{
+		font-size: 11px;
+		line-height: 15px;
+	}
+	.data-num{
+		font-size: 11px;
+		line-height: 15px;
+	}
+	.value-num{
+		text-align: right;
+		overflow: hidden;
+	}
+.bottom-content-panel {
+	margin-top: 5px;
+	.value-percent {
+		width: 80px;
+		height: 24px;
+		span {
+			font-size: 12px;
+			line-height: 24px;
+		}
+	}
+	.value-num{
+		line-height: 22px;
+		padding-top: 1px;
+		.count-num{
+			line-height: 22px;
+			font-size: 22px;
+
+		}
+		span{
+			line-height: 22px;
+			font-size: 22px;
+		}
+	}
+	.abbreviation {
+		.abbr-title {
+			line-height: 22px;
+			font-size: 22px;
+		}
+		.sup-title {
+			font-size: 10px;
+			line-height: 16px;
+		}
+
 	}
 }
 
-.swipe-tabs-container{
-	width: 100%;
-	height: 100%;
-	display: block;
 }
-
-
 @media screen and (max-width: 1200px) {
 	
 }

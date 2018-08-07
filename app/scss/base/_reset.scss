@@ -2,14 +2,10 @@
 @import '../utils/_variables';
 
 body {
-	margin: 0px;
-	padding: 0px;
-	font-family: $base-font-family;
-	background-color: $base-bg;
+	margin: 0;
+	padding: 0;
 	height: 100%;
-	line-height: 1;
 	position: relative;
-	font-size: $base-font-size!important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
